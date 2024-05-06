@@ -9,12 +9,72 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
 
 }
 .header_main{
+    grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     background-color: darkkhaki;
+    align-items: center;
+}
+.header_main #menu_header{
+    grid-column: 1;
+}
+.header_main #menu_header ul{
+    display: flex;
+    list-style: none;
+    padding: 2rem;
+}
+.header_main #menu_header ul li{
+    padding: 1rem;
+    font-size: 1.9rem ;
+}
+.header_main #menu_bar{
+    grid-column: 2;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    
 
 }
+.header_main #menu_bar input{
+
+    width:20rem;
+    height: 2rem;    
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.header_main #menu_bar p{
+
+    font-size: 1.5rem;
+}
+.header_main #logo_main{
+    grid-column: 3;
+    padding: 2rem;
+    text-align: center;
+
+}
+.header_main #logo_main p{
+    font-size: 5rem;
+    
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: blueviolet;
+
+}
+.main_main{
+    padding: 1.2rem;
+}
+
+
+
+
+
