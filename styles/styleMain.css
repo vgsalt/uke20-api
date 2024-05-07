@@ -36,17 +36,17 @@ body{
     font-size: 1.9rem ;
 }
 .header_main #menu_bar{
-    grid-column: 2;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
+    grid-column-start: 2;
+    grid-column-end: 3;
     
+    display: flex;
+    justify-content:center;
 
 }
 .header_main #menu_bar input{
 
     width:20rem;
-    height: 2rem;    
+    height: auto;    
     border: 1px solid #000;
     border-radius: 5px;
 }
@@ -71,9 +71,7 @@ body{
     padding: 5rem 7rem;
     align-items: center;
 }
-/* .sidebar #sidebar_options{
 
-} */
 .sidebar #sidebar_options ul{
     list-style: none;
     padding: 1rem 0 1rem 0;
@@ -83,7 +81,12 @@ body{
     font-size: 25px;
 }
 .main_main{
-    padding: 1.2rem;
+    grid-column-start:2;
+    grid-column-end: 3;
+
+
+
+
 }
 .main_main #info{
     padding: 5rem;
@@ -93,7 +96,10 @@ body{
 
 }
 .main_main #map{
-    padding: 5rem ;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    
 
 }
 .main_main #map iframe{
@@ -134,10 +140,11 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 5rem;
 
 }
 .images_main p{
-    font-size: 9rem;
+    font-size: 10rem;
     padding: 1rem;
 }
 .images_main #card{
