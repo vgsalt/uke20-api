@@ -68,11 +68,33 @@ body{
 .sidebar{
     grid-area: sidebar;
     background-color: blueviolet;
+    padding: 5rem 7rem;
+    align-items: center;
+}
+.sidebar #sidebar_options{
 
+}
+.sidebar #sidebar_options ul{
+    list-style: none;
+    padding: 1rem 0 1rem 0;
+}
+.sidebar #sidebar_options ul li{
+    padding: 0 0 1rem 0;
+    font-size: 25px;
 }
 .main_main{
     padding: 1.2rem;
 }
+.main_main #map{
+    padding: 5rem ;
+
+}
+.main_main #map iframe{
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
 
 
 
