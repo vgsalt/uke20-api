@@ -20,7 +20,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    background-color: darkkhaki;
+    background-color: #d8d8d8;
     align-items: center;
 }
 .header_main #menu_header{
@@ -67,13 +67,13 @@ body{
 
 .sidebar{
     grid-area: sidebar;
-    background-color: blueviolet;
+    background-color:#c1c0be;
     padding: 5rem 7rem;
     align-items: center;
 }
-.sidebar #sidebar_options{
+/* .sidebar #sidebar_options{
 
-}
+} */
 .sidebar #sidebar_options ul{
     list-style: none;
     padding: 1rem 0 1rem 0;
@@ -85,6 +85,13 @@ body{
 .main_main{
     padding: 1.2rem;
 }
+.main_main #info{
+    padding: 5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+
+}
 .main_main #map{
     padding: 5rem ;
 
@@ -94,9 +101,67 @@ body{
     height: auto;
     aspect-ratio: 1;
 }
+#sidebar_options #btn{
+    padding: 1rem;
+    width:10rem;
+    height: auto;
+    aspect-ratio: 2/1;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.9rem;
+}
+
+#sidebar_options #myList{
+    display: none;
+    padding: 1rem;
+    background-color: #99c9e9;
+    
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+}
+#sidebar_options #myList li{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffff;
+}
+.images_main{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+.images_main p{
+    font-size: 9rem;
+    padding: 1rem;
+}
+.images_main #card{
+    
+    width:30rem;
+    height:auto;
+    max-width: 250px;
+    padding:2rem 0 2rem 0;
+
+}
+footer{
+    grid-area: footer;
+    background-color:#d8d8d8;;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+}
 
 
 
 
 
+ 
 
+  
