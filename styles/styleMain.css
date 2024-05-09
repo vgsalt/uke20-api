@@ -164,6 +164,11 @@ footer{
     font-weight: 600;
     color: #000;
 }
+#map1{
+    height: 20%;
+    width: auto;
+    aspect-ratio: 1/1;
+}
 
 
 
