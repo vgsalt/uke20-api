@@ -83,22 +83,25 @@ body{
 .main_main{
     grid-column-start:2;
     grid-column-end: 3;
-
-
-
+    display: flex;
+    flex-direction: column;
 
 }
 .main_main #info{
-    padding: 5rem;
+    padding: 10%;
     font-size: 1.5rem;
     font-weight: 600;
     color: #000;
 
 }
-.main_main #map{
-    padding: 5rem;
-    display: flex;
-    justify-content: center;
+.main_main #map1{
+   
+
+    height: 40%;
+    width: auto;
+    margin-left: 10%;
+    aspect-ratio: 1/1;
+
     
 
 }
@@ -159,16 +162,17 @@ footer{
     grid-area: footer;
     background-color:#d8d8d8;;
     padding: 1rem;
-    text-align: center;
+   display: flex;
+   justify-content: space-between;
     font-size: 1.5rem;
     font-weight: 600;
     color: #000;
 }
-#map1{
-    height: 20%;
-    width: auto;
-    aspect-ratio: 1/1;
+footer #info1 ul, #info2 ul{
+    list-style: none;
+    
 }
+
 
 
 

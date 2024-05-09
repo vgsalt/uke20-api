@@ -19,7 +19,7 @@ let marker = L.marker([59.745164250056135,10.164131070531106 ]).addTo(map)
 let tileURL =   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { }).addTo(map);
 const tiles =L.tileLayer(tileURL,{attribution})
 let place = document.getElementById("searchbar").value;
-const api_url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + place; //encodeURIComponent(place);
+const api_url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + place; 
 console.log(place);
 
 
