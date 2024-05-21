@@ -41,7 +41,7 @@ body{
     
     display: flex;
     justify-content:center;
-
+    gap: 8px;
 }
 .header_main #menu_bar input{
 
