@@ -1,118 +1,140 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
 }
-body{
+
+body {
     padding: .5rem;
     font-family: 'Roboto', sans-serif;
-    background-color: #ffff;
+    background-color: #020202;
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "header header header"
-    "sidebar main main"
-    "footer footer footer";
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
 
 }
-.header_main{
+
+.header_main {
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    background-color: #d8d8d8;
+    background-color: #101010;
     align-items: center;
 }
-.header_main #menu_header{
+
+.header_main #menu_header {
     grid-column: 1;
 }
-.header_main #menu_header ul{
+
+.header_main #menu_header ul {
     display: flex;
     list-style: none;
     padding: 2rem;
 }
-.header_main #menu_header ul li{
+
+.header_main #menu_header ul li {
     padding: 1rem;
-    font-size: 1.9rem ;
+    font-size: 1.9rem;
 }
-.header_main #menu_bar{
+
+.header_main #menu_bar {
     grid-column-start: 2;
     grid-column-end: 3;
-    
+
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 8px;
 }
-.header_main #menu_bar input{
 
-    width:20rem;
-    height: auto;    
+.header_main #menu_bar input {
+
+    width: 20rem;
+    height: auto;
     border: 1px solid #000;
     border-radius: 5px;
 }
-.header_main #menu_bar p{
+
+.header_main #menu_bar p {
 
     font-size: 1.5rem;
 }
-.header_main #logo_main{
+
+.header_main #logo_main {
     grid-column: 3;
     padding: 2rem;
     text-align: center;
 
 }
-.header_main #logo_main p{
+
+.header_main #logo_main p {
     font-size: 5rem;
-    
+
 }
 
-.sidebar{
+.sidebar {
+    width: 80%;
     grid-area: sidebar;
-    background-color:#c1c0be;
-    padding: 5rem 7rem;
+    background-color: #151515;
+    padding: 5rem 2rem;
     align-items: center;
+    display: none;
 }
 
-.sidebar #sidebar_options ul{
+.stop-hiding {
+    display: block !important;
+}
+
+.sidebar #sidebar_options ul {
     list-style: none;
     padding: 1rem 0 1rem 0;
 }
-.sidebar #sidebar_options ul li{
+
+.sidebar #sidebar_options ul li {
     padding: 0 0 1rem 0;
     font-size: 25px;
 }
-.main_main{
-    grid-column-start:2;
+
+.main_main {
+    grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
     flex-direction: column;
 
 }
-.main_main #info{
+
+.main_main #info {
     padding: 10%;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000;
 
 }
-.main_main #map1{
-   
 
-    height: 40%;
+.main_main #map1 {
+
+
+    height: 50%;
     width: auto;
     margin-left: 10%;
     aspect-ratio: 1/1;
 
-    
+
 
 }
-.main_main #map iframe{
+
+.main_main #map iframe {
     width: 50%;
     height: auto;
     aspect-ratio: 1;
 }
-#sidebar_options #btn{
+
+#sidebar_options #btn {
     padding: 1rem;
-    width:10rem;
+    width: 10rem;
     height: auto;
     aspect-ratio: 2/1;
     background-color: #000;
@@ -123,21 +145,64 @@ body{
     font-size: 1.9rem;
 }
 
-#sidebar_options #myList{
+#sidebar_container {
+    height: 25rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background: #252525;
+    padding: 0.25rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card a {
+    color: #fff;
+    text-underline-offset: 5px;
+    transition: all .25s;
+}
+
+.card a:hover {
+    color: #00a4dd;
+}
+
+.card .button {
+    border: none;
+    background-color: #353535;
+    border-radius: 8px;
+    color: #fff;
+    transition: all .25s;
+    padding: .25rem;
+}
+
+.card .button:hover {
+    background-color: #404040;
+}
+
+#sidebar_options #myList {
     display: none;
     padding: 1rem;
     background-color: #99c9e9;
-    
+
     border-radius: 5px;
     position: absolute;
     z-index: 1;
 }
-#sidebar_options #myList li{
+
+#sidebar_options #myList li {
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffff;
 }
-.images_main{
+
+.images_main {
     grid-column-start: 3;
     grid-column-end: 4;
     display: flex;
@@ -146,38 +211,34 @@ body{
     padding: 5rem;
 
 }
-.images_main p{
+
+.images_main p {
     font-size: 10rem;
     padding: 1rem;
 }
-.images_main #card{
-    
-    width:30rem;
-    height:auto;
+
+.images_main #card {
+
+    width: 30rem;
+    height: auto;
     max-width: 250px;
-    padding:2rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
 
 }
-footer{
+
+footer {
     grid-area: footer;
-    background-color:#d8d8d8;;
+    background-color: #d8d8d8;
     padding: 1rem;
-   display: flex;
-   justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     font-size: 1.5rem;
     font-weight: 600;
     color: #000;
 }
-footer #info1 ul, #info2 ul{
+
+footer #info1 ul,
+#info2 ul {
     list-style: none;
-    
+
 }
-
-
-
-
-
-
- 
-
-  

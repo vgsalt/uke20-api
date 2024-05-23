@@ -1,22 +1,13 @@
-
-const mybtn = document.getElementById('myList');
-const tre = document.getElementById('btn');
-tre.addEventListener("click", openmenu);
-function openmenu() {
-    if (mybtn.style.display != 'block') {
-        mybtn.style.display = 'block';
-    } else {
-        mybtn.style.display = 'none';
-    }
-    console.log('clicked');
-}
-
 // map settings
 const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 
 var map = L.map('map1').setView([39.732, -103.228], 4);
 let tileURL = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
 const tiles = L.tileLayer(tileURL, { attribution })
+
+async function addToList(element) {
+    alert(element);
+}
 
 async function show_me() {
     // Get place each time the function is triggered, or you can't change the search value
@@ -29,7 +20,29 @@ async function show_me() {
         console.log(element);
         // No lat or lon, bail
         if (element.latitude == null || element.longitude == null) return;
-        let marker = L.marker([element.latitude, element.longitude]).addTo(map);
+        let marker = L.marker([element.latitude, element.longitude]).addTo(map)
+        // Ternary operators for phone number and website, cause sometimes they're missing
+        element.phone = element.phone ? element.phone : "N/A";
+        element.website_url = element.website_url ? element.website_url : "javascript:void(0)";
         marker.bindPopup(`<b>${element.name}</b><br>${element.address_1}, ${element.city}, ${element.state_province}<br>Phone no. ${element.phone}<br><a href="${element.website_url}">Website</a>`).openPopup();
+        // Add to sidebar.
+        const card = document.createElement('div');
+        card.classList.add("card");
+        card.id = `${element.id}`;
+        card.innerHTML = `
+            <h2>${element.name}</h2>
+            <a href="${element.website_url}" target="_blank">Website</a>
+            <p>📍 ${element.address_1}, ${element.city}, ${element.postal_code} ${element.state_province}</p>
+            <p>📱 ${element.phone}</p>
+            <button class="button" onclick="remove('${element.id}')">Remove</button>
+        `
+        document.getElementById("sidebar_container").appendChild(card);
+        // Because we have elements inside the sidebar, we can stop hiding it.
+        document.getElementById("sidebar").classList.add("stop-hiding");
     });
+}
+
+function remove(id) {
+    element = document.getElementById(id);
+    element.remove();
 }
