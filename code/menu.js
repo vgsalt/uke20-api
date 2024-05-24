@@ -35,6 +35,7 @@ async function show_me() {
             <p>📍 ${element.address_1}, ${element.city}, ${element.postal_code} ${element.state_province}</p>
             <p>📱 ${element.phone}</p>
             <button class="button" onclick="remove('${element.id}')">Remove</button>
+            <button class="button addtolist" id="listbutton-${element.id}" onclick="addToList('${element.id}')">Add to list</button>
         `
         document.getElementById("sidebar_container").appendChild(card);
         // Because we have elements inside the sidebar, we can stop hiding it.
@@ -45,4 +46,21 @@ async function show_me() {
 function remove(id) {
     element = document.getElementById(id);
     element.remove();
+}
+
+function addToList(id) {
+    element = document.getElementById(id);
+    // Create card from the previous card
+    const card = document.createElement('div');
+    card.classList.add("card");
+    card.id = `list-${id}`;
+    card.innerHTML = element.innerHTML;
+    // Remove old card
+    const old_card = document.getElementById(`${id}`);
+    old_card.remove();
+    // Really add to the list
+    document.getElementById("list_container").appendChild(card);
+    // Remove add-to-list button
+    const listbutton = document.getElementById(`listbutton-${id}`);
+    listbutton.remove();
 }

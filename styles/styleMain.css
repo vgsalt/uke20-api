@@ -115,21 +115,43 @@ body {
 }
 
 .main_main #map1 {
-
-
-    height: 50%;
-    width: auto;
+    height: 40%;
+    width: 80%;
     margin-left: 10%;
+    margin-right: 10%;
     aspect-ratio: 1/1;
-
-
-
 }
 
 .main_main #map iframe {
     width: 50%;
     height: auto;
     aspect-ratio: 1;
+}
+
+#searchbar {
+    background-color: #252525;
+    color: #fff;
+    outline: none;
+    padding-left: 1rem;
+    transition: all .25s;
+}
+
+#searchbar:hover, #searchbar:focus {
+    background-color: #303030;
+}
+
+#submit {
+    background-color: #252525;
+    color: #fff;
+    outline: none;
+    transition: all .25s;
+    border-radius: 8px;
+    border: none;
+    padding: .25rem;
+}
+
+#submit:hover {
+    background-color: #303030;
 }
 
 #sidebar_options #btn {
@@ -145,7 +167,7 @@ body {
     font-size: 1.9rem;
 }
 
-#sidebar_container {
+#sidebar_container, #list_container {
     height: 25rem;
     overflow-x: hidden;
     overflow-y: scroll;
